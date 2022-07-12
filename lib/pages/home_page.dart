@@ -12,9 +12,9 @@ class Homepage extends StatelessWidget {
       ), 
       body: Center(
         child: Container(
-          child: Text("welcome to $days days of flutter by $name.",
+          child: Text("Welcome to $days days of flutter by $name.",
               style:
-                  TextStyle(color: Color.fromARGB(255, 243, 4, 4), fontSize: 34)),
+                  TextStyle(color: Color.fromARGB(255, 12, 12, 12), fontSize: 34)),
         ),
       ),
       drawer: Drawer(),
