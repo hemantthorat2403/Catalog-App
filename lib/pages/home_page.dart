@@ -16,9 +16,7 @@ class Homepage extends StatelessWidget {
       drawer: MyDrawer(),
       body: Center(
         child: Container(
-          child: Text("Welcome to $days days of flutter by $name.",
-              style: TextStyle(
-                  color: Color.fromARGB(255, 12, 12, 12), fontSize: 34)),
+          child: Text("Welcome to $days days of flutter by $name."),
         ),
       ),
     );
