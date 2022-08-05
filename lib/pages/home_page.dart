@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer.dart';
- 
 
 class Homepage extends StatelessWidget {
   final int days = 30;
