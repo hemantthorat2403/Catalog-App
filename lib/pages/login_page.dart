@@ -1,8 +1,11 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:demo/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class login_page extends StatefulWidget {
-  const login_page({Key? key}) : super(key: key);
+  const login_page({Key key}) : super(key: key);
 
   @override
   State<login_page> createState() => _login_pageState();
@@ -14,7 +17,7 @@ class _login_pageState extends State<login_page> {
 
   final _formkey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
-    if (_formkey.currentState!.validate()) {
+    if (_formkey.currentState.validate()) {
       setState(() {
         changeButton = true;
       });
@@ -29,7 +32,7 @@ class _login_pageState extends State<login_page> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -59,8 +62,8 @@ class _login_pageState extends State<login_page> {
                           hintText: "Enter Username",
                           labelText: "Usernamre",
                         ),
-                        validator: (String? value) {
-                          if (value!.isEmpty) {
+                        validator: (String value) {
+                          if (value.isEmpty) {
                             return "Username cannot be empty";
                           }
 
@@ -77,8 +80,8 @@ class _login_pageState extends State<login_page> {
                           hintText: "Enter Password",
                           labelText: "Password",
                         ),
-                        validator: (String? value) {
-                          if (value!.isEmpty) {
+                        validator: (String value) {
+                          if (value.isEmpty) {
                             return " Password cannot be empty";
                           } else if (value.length < 6) {
                             return "password length must be st least 6";
@@ -92,7 +95,7 @@ class _login_pageState extends State<login_page> {
                       ),
 
                       Material(
-                        color: Colors.cyan,
+                        color: context.theme.buttonColor,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
@@ -113,7 +116,7 @@ class _login_pageState extends State<login_page> {
                                 : Text(
                                     "Login",
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18),
                                   ),

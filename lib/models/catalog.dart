@@ -2,13 +2,16 @@
 import 'dart:convert';
 
 class CatalogModel {
+
   static List<Item> items = [
     
   ];
+  // get item by id..
   Item getByID(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
-
- Item getByPosition(int pos) => items[pos];
+      
+      // get item by position..
+      Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
@@ -20,23 +23,23 @@ class Item {
   final String image;
 
   Item(
-    {required this.id,
-    required this.name,
-    required this.desc,
-    required this.price,
-    required this.color,
-    required this.image}
+    { this.id,
+     this.name,
+     this.desc,
+     this.price,
+     this.color,
+     this.image}
     );
   
       
 
   Item copyWith({
-    int? id,
-    String? name,
-    String? desc,
-    num? price,
-    String? color,
-    String? image,
+    int id,
+    String name,
+    String desc,
+    num price,
+    String color,
+    String image,
   }) {
     return Item(
       id: id ?? this.id,
@@ -103,3 +106,4 @@ class Item {
       image.hashCode;
   }
 }
+
